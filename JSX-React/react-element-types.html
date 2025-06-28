@@ -1,36 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script
+      src="https://unpkg.com/react@18/umd/react.development.js"
+      crossorigin
+    ></script>
+    <script
+      src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
+      crossorigin
+    ></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Document</title>
-  <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
-  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
-  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
-</head>
+  <body>
+    <div id="app"></div>
 
-<body>
-  <div id="app"></div>
+    <script type="text/babel">
+      function PostItem() {
+        return (
+          <div className="post-item">
+            <h2 className="post-title">Title</h2>
+            <p className="post-desc">Content-1</p>
+            <p className="post-publsshed">Content-2</p>
+          </div>
+        );
+      }
 
-  <script type="text/babel">
-
-
-
-    const app = (
-      <div className="posts-list">
-        <div className="post-item">
-          <h2 className="className"></h2>
-
+      const app = (
+        <div className="posts-list">
+          <PostItem />
+          <PostItem />
+          <PostItem />
         </div>
-      </div>
-    );
+      );
 
-    console.log(app);
-
-    const root = ReactDOM.createRoot(document.getElementById("app"));
-    root.render(app);
-  </script>
-</body>
-
+      const root = ReactDOM.createRoot(document.getElementById("app"));
+      root.render(app);
+    </script>
+  </body>
 </html>

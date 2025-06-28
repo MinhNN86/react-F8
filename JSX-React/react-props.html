@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script
+      src="https://unpkg.com/react@18/umd/react.development.js"
+      crossorigin
+    ></script>
+    <script
+      src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
+      crossorigin
+    ></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  </head>
+  <body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+      const dataRender = [
+        {
+          title: "[Phần 1] Tạo dự án ReactJS với Webpack và Babel",
+          description:
+            "Tự tạo dự án ReactJS với webpack và babel nhằm mục đích giúp chúng ta hiểu rõ hơn về về cách create-react-app đã tạo ra dự án ReactJS như thế nào và quan...",
+          image_url:
+            "https://files.fullstack.edu.vn/f8-prod/blog_posts/279/6153f692d366e.jpg",
+          published_at: "2021-09-29 12:16:03",
+        },
+        {
+          title: "Cách đưa code lên GitHub và tạo GitHub Pages",
+          description:
+            "Ở bài viết này, mình sẽ hướng dẫn cách để đưa code lên trên Github và tạo Github Pages để xem được trang web mà các bạn đưa lên  như thế nào.",
+          image_url:
+            "https://files.fullstack.edu.vn/f8-prod/blog_posts/677/615436b218d0a.png",
+          published_at: "2021-09-29 16:49:38",
+        },
+        {
+          title: "Ký sự ngày thứ 25 học ở F8 ",
+          description:
+            "Hí ae, tôi cũng tên Sơn nhưng mà là newbie còn ông Sơn kia thì trùm rồi :))). Tôi cũng vừa mới đến với lập trình,tôi là sv năm 1....",
+          image_url:
+            "https://files.fullstack.edu.vn/f8-prod/blog_posts/51/6139c6453456e.png",
+          published_at: "2021-09-09 15:31:02",
+        },
+        {
+          title: "Các nguồn tài nguyên hữu ích cho 1 front-end developer",
+          description: null,
+          image_url:
+            "https://files.fullstack.edu.vn/f8-prod/blog_posts/107/613a1f3685814.png",
+          published_at: "2021-09-09 21:50:31",
+        },
+      ];
+
+      // PostItem.js
+      function PostItem(props) {
+        return (
+          <div className="post-item">
+            <h2 className="post-title">{props.title}</h2>
+            <p className="post-desc">{props.description}</p>
+            <p className="post-published">{props.publishedAt}</p>
+            <img src={props.img_url} alt={props.title} />
+          </div>
+        );
+      }
+
+      // App.js
+      function App() {
+        return (
+          <div id="wrapper">
+            {dataRender.map((e, index) => (
+              <PostItem />
+            ))}
+          </div>
+        );
+      }
+
+      // index.js
+      const root = ReactDOM.createRoot(document.getElementById("root"));
+      root.render(<App />);
+    </script>
+  </body>
+</html>
